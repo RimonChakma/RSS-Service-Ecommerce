@@ -1,9 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:rss_service_ecommerce/view/screen/Bottom_Nav_Bar/home/components/Banner_section%20.dart';
+import 'package:rss_service_ecommerce/view/screen/Bottom_Nav_Bar/home/components/Deals_section.dart';
+import 'package:rss_service_ecommerce/view/screen/Bottom_Nav_Bar/home/components/Flash_sale_product.dart';
 import 'package:rss_service_ecommerce/view/screen/Bottom_Nav_Bar/home/components/Home_app_bar.dart';
 import 'package:rss_service_ecommerce/view/screen/Bottom_Nav_Bar/home/components/Home_title.dart';
-
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -11,11 +12,7 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-
 class _HomeScreenState extends State<HomeScreen> {
-
- 
-
   @override
   Widget build(BuildContext context) {
     return 
@@ -23,15 +20,19 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: SafeArea(
-          child: Column(
-            children: [
-
-             HomeAppBar(),
-              SizedBox(height: 10,),
-              BannerSection(),
-              DealsSection()  
-
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+            
+               HomeAppBar(),
+                SizedBox(height: 10,),
+                BannerSection(),
+                DealsSection(),
+                FlashSale(),
+                FlashSale()
+            
+              ],
+            ),
           ),
         ),
       ),
@@ -39,73 +40,62 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class DealsSection extends StatelessWidget {
-  const DealsSection({super.key});
+class FlashSale extends StatelessWidget {
+  const FlashSale({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        
+    return Column(
         children: [
-          HomeTitle(title: "New Deals Everyday's",),
-          Align(
-            alignment: Alignment.centerLeft,
-            child:
-             Container(
-             decoration: BoxDecoration(
-              color: Colors.grey.shade200,
-              borderRadius: BorderRadius.circular(20)
-             ),
-             child: Padding(
-               padding: const EdgeInsets.all(10),
-               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("7%of",style: TextStyle(
-                        color: Colors.blue
-                      ),),
-                      Text("min.spend ৳ 399",style: TextStyle(
-                        color: Colors.blue.withOpacity(.7)
-                      ),)
-                    ],
-                  ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              HomeTitle(title: "Flash Sale",),
 
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Rss Vouture",style: TextStyle(
-                        color: Colors.blue,
-
-                      ),),
-                      Text("1-11-2024 to 2-11-2024",style: TextStyle(color: Colors.blue.withOpacity(.7),),)
-                    ],
-                  ),
-                 GestureDetector(child: Text("Collect all"),)
-                ],
-               ),
-             ),
-             
-            ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 10
+                ),
+                child: Text("See ALL"),
+              ),
+              
+            ],
           ),
-      
-         HomeTitle(title: "Beast Deals",),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Container(
-              height: 100,
-              width: 200,
-              color: Colors.red,
-            ),
-          )
-        ],
-      ),
+
+          SizedBox(height: 10,),
+
+           Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: [
+                   FlashsaleproductCart(
+                    ImageLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiVB2C9c8eDaE5L_Cynr8YWAmFL0MCmD65_xBySdKCeQ5ryKUk__YKWd6XPzYZscaiOSQ&usqp=CAU", 
+                    MainPrice: "300",
+                     OldPrice: "600"
+                     ),
+
+                     FlashsaleproductCart(
+                    ImageLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzfESLpRDdfxxhaL1HBXr8XqcBZ9IEGZv3zA&s", 
+                    MainPrice: "45,700",
+                     OldPrice: "50,000"
+                     ),
+
+                     FlashsaleproductCart(
+                    ImageLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnDs2SltmVf4sFpHmbjsM9npeMDg73iMyS7g&s", 
+                    MainPrice: "50",
+                     OldPrice: "80"
+                     ),
+                     
+                 ],
+               )
+         
+        
+        ]
     );
   }
 }
 
+
+
+  
 
 
