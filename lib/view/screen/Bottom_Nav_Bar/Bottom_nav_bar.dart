@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:rss_service_ecommerce/view/screen/dashboard/Home_screen.dart';
-import 'package:rss_service_ecommerce/view/screen/dashboard/cart_screen.dart';
-import 'package:rss_service_ecommerce/view/screen/dashboard/message_screen.dart';
-import 'package:rss_service_ecommerce/view/screen/dashboard/profile_screen.dart';
+import 'package:rss_service_ecommerce/view/screen/Bottom_Nav_Bar/home/Home_screen.dart';
+import 'package:rss_service_ecommerce/view/screen/Bottom_Nav_Bar/cart/cart_screen.dart';
+import 'package:rss_service_ecommerce/view/screen/Bottom_Nav_Bar/message/message_screen.dart';
+import 'package:rss_service_ecommerce/view/screen/Bottom_Nav_Bar/profile/profile_screen.dart';
 
 
-class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({super.key});
+class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({super.key});
 
   @override
-  State<DashboardScreen> createState() => _DashboardScreenState();
+  State<BottomNavBar> createState() => _BottomNavBarState();
 }
 
-class _DashboardScreenState extends State<DashboardScreen> {
+class _BottomNavBarState extends State<BottomNavBar> {
 
 
   int CurrentIndex = 0;
